@@ -1,8 +1,18 @@
 class Album {
 
 	constructor(artist, title) {
-		this.artist = artist;
-		this.title = title;
+		if (artist !== '') {
+			this.artist = artist;
+		} else {
+			throw {name:'InvalidInputException', message:'Invalid artist name'};
+		}
+
+		if (title !== '') {
+			this.title = title;
+		} else {
+			throw {name:'InvalidInputException', message:'Invalid album name'};
+		}
+
 		this.tracks = [];
 	}
 

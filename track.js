@@ -1,8 +1,17 @@
 class Track {
 
 	constructor(title, cuePoint) {
-		this.title = title;
-		this.cuePoint = cuePoint;
+		if (title !== '') {
+			this.title = title;
+		} else {
+			throw {name:'InvalidInputException', message:'Invalid track title'};
+		}
+
+		if (cuePoint.match('[0-9][0-9]:[0-9][0-9]:[0-9][0-9]')) {
+			this.cuePoint = cuePoint;
+		} else {
+			throw {name:'InvalidInputException', message:'Invalid cue point'};
+		}
 
 	}
 
