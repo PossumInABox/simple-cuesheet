@@ -1,0 +1,50 @@
+<html>
+<head>
+	<script src="./functions.js"></script>
+	<script src="./album.js"></script>
+	<script src="./track.js"></script>
+
+	<link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+<script>
+
+	let myAlbum;
+
+</script>
+
+<table>
+	<tr>
+		<td>
+
+			<button onclick="persist()">Save</button> <button onclick="load()">Load</button> <br />
+
+			<fieldset>
+				<input type="text" id="artist" />
+				<input type="text" id="albumTitle" /><br />
+				<button class="button" onclick="setAlbum()">Make Album</button>
+			</fieldset>
+
+
+			<fieldset>
+				<input type="text" id="trackTitle" />
+				<input type="text" id="cuePoint" /><br />
+				<button class="button" onclick="addTrack()">Add Track</button>
+			</fieldset>
+
+		</td>
+		<td>
+
+
+
+			<pre id="outputBox"></pre>
+
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
