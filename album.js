@@ -18,6 +18,10 @@ class Album {
 		}
 	}
 
+	clearTracks() {
+		this.tracks = [];
+	}
+
 	toString() {
 
 		let returnString = 'PERFORMER "' + this.artist + '"\n';

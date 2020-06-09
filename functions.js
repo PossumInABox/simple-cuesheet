@@ -34,6 +34,11 @@ function addTrack() {
 
 }
 
+function clearTracks() {
+	myAlbum.clearTracks();
+	render();
+}
+
 function persist() {
 
 	localStorage.setItem('cuesheet_album', JSON.stringify(myAlbum));
