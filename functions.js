@@ -9,14 +9,18 @@ function setAlbum() {
 	let artist = document.querySelector('#artist').value;
 	let albumTitle = document.querySelector('#albumTitle').value;
 
-	if (typeof myAlbum !== 'undefined') {
-		myAlbum.artist = artist;
-		myAlbum.title = albumTitle;
-	} else {
-		myAlbum = new Album(artist, albumTitle);
-	}
+	try {
+		if (typeof myAlbum !== 'undefined') {
+			myAlbum.artist = artist;
+			myAlbum.title = albumTitle;
+		} else {
+			myAlbum = new Album(artist, albumTitle);
+		}
 
-	render();
+		render();
+	} catch (e) {
+		alert(e.message);
+	}
 
 }
 
@@ -25,12 +29,17 @@ function addTrack() {
 	let title = document.querySelector('#trackTitle').value;
 	let cuePoint = document.querySelector('#cuePoint').value;
 
-	myAlbum.addTrack(title, cuePoint);
+	try {
+		myAlbum.addTrack(title, cuePoint);
+		document.querySelector('#trackTitle').value = '';
+		document.querySelector('#cuePoint').value = '';
 
-	document.querySelector('#trackTitle').value = '';
-	document.querySelector('#cuePoint').value = '';
+		render();
 
-	render();
+	} catch (e) {
+		alert(e.message);
+	}
+
 
 }
 
