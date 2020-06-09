@@ -19,20 +19,21 @@
 <table>
 	<tr>
 		<td>
+			<span>Note: Use "save" to save your current state of work in your browser <br />and "load" to load it again to continue your work.</span><br>
 
-			<button onclick="persist()">Save</button> <button onclick="load()">Load</button> <br />
+			<button onclick="persist()" title="Save to Browser (Local Storage)">Save</button> <button onclick="load()" title="Load from Browser (Local Storage)">Load</button> <br />
 
 			<fieldset>
-				<input type="text" id="artist" />
-				<input type="text" id="albumTitle" /><br />
+				<input type="text" id="artist" placeholder="Artist"/>
+				<input type="text" id="albumTitle" placeholder="Album Title" /><br />
 				<button class="button" onclick="setAlbum()">Make Album</button>
 			</fieldset>
 
 
 			<fieldset>
-				<input type="text" id="trackTitle" />
-				<input type="text" id="cuePoint" /><br />
-				<button class="button" onclick="addTrack()">Add Track</button>
+				<input type="text" id="trackTitle" placeholder="Track Title" />
+				<input type="text" id="cuePoint" placeholder="00:00:00" pattern="[0-9][0-9]:[0-9][0-9]:[0-9][0-9]" oninput="this.reportValidity()" /><br />
+				<button type="submit" class="button" onclick="addTrack()">Add Track</button>
 			</fieldset>
 
 			<button class="button" onclick="clearTracks()">Clear tracks</button>
