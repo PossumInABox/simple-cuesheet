@@ -73,7 +73,7 @@ function addTrack() {
 }
 
 function deleteTrack(trackItem) {
-	myAlbum.deleteTrack(trackItem.getAttribute('data-title'));
+	myAlbum.deleteTrack(trackItem.dataset.title);
 	render();
 }
 
