@@ -2,15 +2,44 @@ body {
 	font-family: sans-serif;
 }
 
+main {
+	width: 80%;
+	margin: 0 auto;
+}
+
 td {
 	vertical-align: top;
+}
+
+.titlebox {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.toolbox {
+	box-sizing: border-box;
+	width: 30%;
+	float: left;
+	margin-left: 1.5%;
+	margin-right: 1.5%;
 }
 
 pre {
 	background-color: #161618;
 	color: white;
 	padding: 5px;
+	box-sizing: border-box;
 	font-family: monospace;
+	display: block;
+	width: 100%;
+}
+
+.toolbox table {
+	width: 100%;
+}
+
+.toolbox table td {
+	padding: 2px;
 }
 
 input[pattern]:invalid{
@@ -21,6 +50,16 @@ input[pattern]:valid{
 	color:green;
 }
 
+#duration, #cuePoint {
+	width: 80px;
+	text-align: right;
+}
+
+button {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
 #trackTable tr:nth-child(odd) {
-	background-color: aliceblue;
+	background-color: #b0c3ea;
 }

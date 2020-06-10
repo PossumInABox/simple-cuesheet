@@ -16,50 +16,64 @@
 
 </script>
 
-<table>
-	<tr>
-		<td>
-			<span>Note: Use "save" to save your current state of work in your browser <br />and "load" to load it again to continue your work.</span><br>
+<main>
 
-			<button onclick="persist()" title="Save to Browser (Local Storage)">Save</button> <button onclick="load()" title="Load from Browser (Local Storage)">Load</button> <br />
+<section class="titlebox">
+	<h1>Simple Cuesheet</h1>
 
-			<fieldset>
-				<span>Enter Artist, Title and total duration of the album</span><br>
-				<input type="text" id="artist" placeholder="Artist"/>
-				<input type="text" id="albumTitle" placeholder="Album Title" />
-				<input type="text" id="duration" placeholder="00:00:00" pattern="[0-9][0-9]:[0-9][0-9]:[0-9][0-9]" oninput="this.reportValidity()" /><br />
-				<button class="button" onclick="setAlbum()">Make Album</button>
-			</fieldset>
+	<span>Note: Use "save" to save your current state of work in your browser and "load" to load it again to continue your work.</span><br>
 
+	<button onclick="persist()" title="Save to Browser (Local Storage)">Save</button> <button onclick="load()" title="Load from Browser (Local Storage)">Load</button>
+</section>
 
-			<fieldset>
-				<span>Add tracks by title and cue point respective to the total duration</span><br>
-				<input type="text" id="trackTitle" placeholder="Track Title" />
-				<input type="text" id="cuePoint" placeholder="00:00:00" pattern="[0-9][0-9]:[0-9][0-9]:[0-9][0-9]" oninput="this.reportValidity()" /><br />
-				<button type="submit" class="button" onclick="addTrack()">Add Track</button>
-			</fieldset>
+	<hr>
 
-			<button class="button" onclick="clearTracks()">Clear tracks</button>
+<section class="toolbox">
 
-		</td>
-		<td>
+	<h2>Album Data</h2>
 
-			<pre id="outputBox"></pre>
+	<fieldset>
+		<span>Enter Artist, Title and total duration of the album</span><br>
+		<input type="text" id="artist" placeholder="Artist"/>
+		<input type="text" id="albumTitle" placeholder="Album Title" />
+		<input type="text" id="duration" placeholder="00:00:00" pattern="[0-9][0-9]:[0-9][0-9]:[0-9][0-9]" oninput="this.reportValidity()" /><br />
+		<button class="button" onclick="setAlbum()">Make Album</button>
+	</fieldset>
 
-		</td>
+	<fieldset>
+		<span>Add tracks by title and cue point respective to the total duration</span><br>
+		<input type="text" id="trackTitle" placeholder="Track Title" />
+		<input type="text" id="cuePoint" placeholder="00:00:00" pattern="[0-9][0-9]:[0-9][0-9]:[0-9][0-9]" oninput="this.reportValidity()" /><br />
+		<button type="submit" class="button" onclick="addTrack()">Add Track</button>
+	</fieldset>
 
-		<td>
+	<button class="button" style="float: right" onclick="clearTracks()">Clear tracks</button>
 
-			<table id="trackTable">
-				<tbody>
+</section>
 
-				</tbody>
-			</table>
+<section class="toolbox">
 
-		</td>
+	<h2>Cuesheet Output</h2>
 
-	</tr>
-</table>
+	<span>Copy this information into a file with a .cue ending</span>
+	<pre id="outputBox"></pre>
+
+</section>
+
+<section class="toolbox">
+
+	<h2>Nicer Preview</h2>
+	<span>Album overview with number, track name and duration</span>
+
+	<table id="trackTable">
+		<tbody>
+
+		</tbody>
+	</table>
+
+</section>
+
+</main>
 
 </body>
 </html>
