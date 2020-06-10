@@ -1,6 +1,6 @@
 class Album {
 
-	constructor(artist, title) {
+	constructor(artist, title, duration) {
 		if (artist !== '') {
 			this.artist = artist;
 		} else {
@@ -11,6 +11,12 @@ class Album {
 			this.title = title;
 		} else {
 			throw {name:'InvalidInputException', message:'Invalid album name'};
+		}
+
+		if (duration.match('[0-9][0-9]:[0-9][0-9]:[0-9][0-9]')) {
+			this.duration = duration;
+		} else {
+			throw {name:'InvalidInputException', message:'Invalid duration'};
 		}
 
 		this.tracks = [];

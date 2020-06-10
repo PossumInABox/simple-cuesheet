@@ -1,3 +1,7 @@
+body {
+	font-family: sans-serif;
+}
+
 td {
 	vertical-align: top;
 }
@@ -6,6 +10,7 @@ pre {
 	background-color: #161618;
 	color: white;
 	padding: 5px;
+	font-family: monospace;
 }
 
 input[pattern]:invalid{
@@ -14,4 +19,8 @@ input[pattern]:invalid{
 
 input[pattern]:valid{
 	color:green;
+}
+
+#trackTable tr:nth-child(odd) {
+	background-color: aliceblue;
 }

@@ -24,13 +24,16 @@
 			<button onclick="persist()" title="Save to Browser (Local Storage)">Save</button> <button onclick="load()" title="Load from Browser (Local Storage)">Load</button> <br />
 
 			<fieldset>
+				<span>Enter Artist, Title and total duration of the album</span><br>
 				<input type="text" id="artist" placeholder="Artist"/>
-				<input type="text" id="albumTitle" placeholder="Album Title" /><br />
+				<input type="text" id="albumTitle" placeholder="Album Title" />
+				<input type="text" id="duration" placeholder="00:00:00" pattern="[0-9][0-9]:[0-9][0-9]:[0-9][0-9]" oninput="this.reportValidity()" /><br />
 				<button class="button" onclick="setAlbum()">Make Album</button>
 			</fieldset>
 
 
 			<fieldset>
+				<span>Add tracks by title and cue point respective to the total duration</span><br>
 				<input type="text" id="trackTitle" placeholder="Track Title" />
 				<input type="text" id="cuePoint" placeholder="00:00:00" pattern="[0-9][0-9]:[0-9][0-9]:[0-9][0-9]" oninput="this.reportValidity()" /><br />
 				<button type="submit" class="button" onclick="addTrack()">Add Track</button>
@@ -41,11 +44,20 @@
 		</td>
 		<td>
 
-
-
 			<pre id="outputBox"></pre>
 
 		</td>
+
+		<td>
+
+			<table id="trackTable">
+				<tbody>
+
+				</tbody>
+			</table>
+
+		</td>
+
 	</tr>
 </table>
 
