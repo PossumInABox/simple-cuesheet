@@ -81,11 +81,27 @@ function persist() {
 
 }
 
-function load() {
-
-
+function loadFromLocal() {
 	let loaded = localStorage.getItem('cuesheet_album');
+	try {
+		load(loaded);
+	} catch (e) {
+		alert(e.message);
+	}
+}
 
+function loadFromInput() {
+	let loaded = document.getElementById('jsonin').value;
+	try {
+		load(loaded);
+		document.getElementById('jsonin').value = '';
+	} catch (e) {
+		alert(e.message);
+	}
+}
+
+
+function load(loaded) {
 
 	let parsed = JSON.parse(loaded);
 	myAlbum = new Album(parsed.artist, parsed.title, parsed.duration);
@@ -98,9 +114,7 @@ function load() {
 	document.querySelector('#albumTitle').value = myAlbum.title;
 	document.querySelector('#duration').value = myAlbum.duration;
 
-
 	render();
-
 
 }
 
