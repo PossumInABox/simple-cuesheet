@@ -25,6 +25,8 @@ function render() {
 
 	document.getElementById('trackTable').innerHTML = trackTable;
 
+	document.getElementById('jsonout').innerText = JSON.stringify(myAlbum);
+
 }
 
 function setAlbum() {

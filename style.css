@@ -32,6 +32,9 @@ pre {
 	font-family: monospace;
 	display: block;
 	width: 100%;
+	word-break: break-word!important;
+	white-space: pre-wrap;
+
 }
 
 .toolbox table {

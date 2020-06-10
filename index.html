@@ -20,10 +20,8 @@
 
 <section class="titlebox">
 	<h1>Simple Cuesheet</h1>
-
 	<span>Note: Use "save" to save your current state of work in your browser and "load" to load it again to continue your work.</span><br>
-
-	<button onclick="persist()" title="Save to Browser (Local Storage)">Save</button> <button onclick="load()" title="Load from Browser (Local Storage)">Load</button>
+	<button onclick="persist()" title="Save to Browser (Local Storage)">Save</button> <button onclick="loadFromLocal()" title="Load from Browser (Local Storage)">Load</button>
 </section>
 
 	<hr>
@@ -54,9 +52,12 @@
 <section class="toolbox">
 
 	<h2>Cuesheet Output</h2>
-
 	<span>Copy this information into a file with a .cue ending</span>
 	<pre id="outputBox"></pre>
+
+	<h2>JSON Output</h2>
+	<span>To make your data more portable</span>
+	<pre id="jsonout"></pre>
 
 </section>
 
@@ -64,10 +65,8 @@
 
 	<h2>Nicer Preview</h2>
 	<span>Album overview with number, track name and duration</span>
-
 	<table id="trackTable">
 		<tbody>
-
 		</tbody>
 	</table>
 
