@@ -4,7 +4,7 @@ function render() {
 
 	let trackTable = '';
 	for (let i = 0; i < myAlbum.tracks.length; i++) {
-		let currentLine = '<tr><td>' + (i+1) + '</td><td>' + myAlbum.tracks[i].title + '</td>';
+		let currentLine = '<tr><td>' + (i+1) + '</td><td>' + myAlbum.tracks[i].title + '<span class="delete" data-title="' + myAlbum.tracks[i].title + '" onclick="deleteTrack(this)">-</span></td>';
 
 		let currentLength = '';
 		if (myAlbum.tracks.length === 1) {
@@ -70,6 +70,11 @@ function addTrack() {
 	}
 
 
+}
+
+function deleteTrack(trackItem) {
+	myAlbum.deleteTrack(trackItem.getAttribute('data-title'));
+	render();
 }
 
 function clearTracks() {

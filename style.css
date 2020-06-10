@@ -73,6 +73,23 @@ button {
 	margin-bottom: 3px;
 }
 
+.delete {
+	display: inline-block;
+	float: right;
+	background-color: darkred;
+	color: white;
+	width: 10px;
+	padding-left: 3px;
+	padding-right: 3px;
+	border-radius: 50%;
+	text-align: center;
+	font-weight: bolder;
+}
+
+.delete:hover {
+	background-color: #b40202;
+}
+
 #trackTable tr:nth-child(odd) {
 	background-color: #b0c3ea;
 }
