@@ -27,10 +27,17 @@ class Album {
 	}
 
 	deleteTrack(title) {
+		let formerCuePoint;
+		if (this.tracks[0]) {
+			formerCuePoint = this.tracks[0].cuePoint;
+		}
 		for (let i = 0; i < this.tracks.length; i++) {
 			if (this.tracks[i].title === title) {
 				this.tracks.splice(i, 1);
 			}
+		}
+		if (this.tracks[0]) {
+			this.tracks[0].cuePoint = formerCuePoint;
 		}
 	}
 
