@@ -1,3 +1,15 @@
+function setDarkMode() {
+	document.querySelector('body').classList = 'darkmode';
+	document.getElementById('sw_light').style.display = 'block';
+	document.getElementById('sw_dark').style.display = 'none';
+}
+
+function setLightMode() {
+	document.querySelector('body').classList = 'lightmode';
+	document.getElementById('sw_light').style.display = 'none';
+	document.getElementById('sw_dark').style.display = 'block';
+}
+
 function render() {
 
 	document.getElementById('outputBox').innerText = myAlbum.toString();

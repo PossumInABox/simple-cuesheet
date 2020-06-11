@@ -1,0 +1,49 @@
+/* General */
+
+.toolbox {
+    box-shadow: #252d2d61 3px 7px 9px 1px;
+}
+
+
+/* Light mode */
+
+body.lightmode {
+    background-color: #ADCBC2;
+}
+
+body.lightmode .toolbox {
+    background-color: white;
+}
+
+body.lightmode #modeswitcher {
+    color: black;
+}
+
+
+/* Dark mode */
+
+body.darkmode {
+    background-color: #35403d;
+}
+
+body.darkmode .titlebox {
+    color: white;
+}
+
+body.darkmode .toolbox, body.darkmode .toolbox table {
+    background-color: #170d00;
+    color: white;
+}
+
+body.darkmode input, body.darkmode textarea {
+    background-color: #161618;
+    color: inherit;
+}
+
+body.darkmode #trackTable tr:nth-child(odd) {
+    background-color: #161618;
+}
+
+body.darkmode #modeswitcher {
+    color: white;
+}

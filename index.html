@@ -5,6 +5,7 @@
 	<script src="./track.js"></script>
 
 	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./themes.css">
 
 </head>
 
@@ -17,6 +18,11 @@
 </script>
 
 <main>
+
+	<div id="modeswitcher">
+		<span id="sw_dark" onclick="setDarkMode()">&#9790; Dark Mode</span>
+		<span id="sw_light" onclick="setLightMode()">&#9728; Light Mode</span>
+	</div>
 
 <section class="titlebox">
 	<h1>Simple Cuesheet</h1>
@@ -78,6 +84,15 @@
 </section>
 
 </main>
+
+<script>
+	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		// dark mode
+		setDarkMode();
+	} else {
+		setLightMode();
+	}
+</script>
 
 </body>
 </html>
