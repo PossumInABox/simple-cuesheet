@@ -109,14 +109,27 @@ function loadFromLocal() {
 	}
 }
 
-function loadFromInput() {
-	let loaded = document.getElementById('jsonin').value;
+function loadFromJSONInput() {
+	let loaded = document.getElementById('textIn').value;
 	try {
 		load(loaded);
 		document.getElementById('jsonin').value = '';
 	} catch (e) {
 		alert(e.message);
 	}
+}
+
+function loadFromTextInput() {
+	let loaded = document.getElementById("textIn").value;
+	let loadedLines = loaded.split("\n");
+	for(let i=0; i<loadedLines.length; i++) {
+		let currentLineList = loadedLines[i].split(" - ");
+		let currentCue = currentLineList[0] + ":00";
+		let currentTitle = currentLineList[1];
+		myAlbum.addTrack(currentTitle, currentCue);
+		render();
+	}
+
 }
 
 

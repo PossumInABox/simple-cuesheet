@@ -53,10 +53,12 @@
 
 	<button class="button" style="float: right" onclick="clearTracks()">Clear tracks</button>
 
-	<h2>JSON Input</h2>
-	<span>Load in data from json (see output on the right).</span>
-	<textarea id="jsonin"></textarea>
-	<button onclick="loadFromInput()">Load JSON</button>
+	<h2>Text &amp; JSON Input</h2>
+	<span>Load in data from text or json (see output on the right).</span><br>
+	<span>Text input must come as follows: 00:00 - Track title<br>An album must already be set up.</span>
+	<textarea id="textIn"></textarea>
+	<button onclick="loadFromTextInput()">Load from Text</button>
+	<button onclick="loadFromJSONInput()">Load JSON</button>
 
 </section>
 
