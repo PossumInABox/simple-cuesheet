@@ -124,8 +124,8 @@ function loadFromTextInput() {
 	let loadedLines = loaded.split("\n");
 	for(let i=0; i<loadedLines.length; i++) {
 		let currentLineList = loadedLines[i].split(" - ");
-		let currentCue = currentLineList[0] + ":00";
-		let currentTitle = currentLineList[1];
+		let currentCue = currentLineList[0].trim() + ":00";
+		let currentTitle = currentLineList[1].trim();
 		myAlbum.addTrack(currentTitle, currentCue);
 		render();
 	}
