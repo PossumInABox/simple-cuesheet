@@ -182,4 +182,45 @@ function compareTimes(time1, time2) {
 	return timeList3.join(':');
 }
 
+// Function to download data to a file
+// see: https://stackoverflow.com/questions/13405129/javascript-create-and-save-file
+function download(data, filename, type) {
+	let file = new Blob([data], { type: type });
+	if (window.navigator.msSaveOrOpenBlob) // IE10+
+		window.navigator.msSaveOrOpenBlob(file, filename);
+	else { // Others
+		let a = document.createElement("a"),
+			url = URL.createObjectURL(file);
+		a.href = url;
+		a.download = filename;
+		document.body.appendChild(a);
+		a.click();
+		setTimeout(function() {
+			document.body.removeChild(a);
+			window.URL.revokeObjectURL(url);
+		}, 0);
+	}
+}
+
+function downloadData(type) {
+
+	switch(type) {
+		case 'cue':
+			var data = myAlbum.toString();
+			var fileName = myAlbum.artist + ' - ' + myAlbum.title + '.cue'
+			break;
+		case 'json':
+			var data = JSON.stringify(myAlbum)
+			var fileName = myAlbum.artist + ' - ' + myAlbum.title + '.json'
+			var mime = 'application/json'
+			break;
+		default:
+			var data = 'no data selected'
+			var fileName = 'save-cuesheet.txt'
+			var mime = 'text/text'
+	}
+
+	download(data, fileName, mime)
+
+}
 
