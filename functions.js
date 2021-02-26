@@ -14,9 +14,9 @@ function setLightMode() {
 
 function checkDesign() {
 	document.onreadystatechange = () => {
-		try {
-			let design = localStorage.design
-			switch (design) {
+		if (localStorage.design) {
+
+			switch (localStorage.design) {
 				case 'darkmode':
 					setDarkMode()
 					break
@@ -24,9 +24,9 @@ function checkDesign() {
 					setLightMode()
 					break
 				default:
-
+					setLightMode()
 			}
-		} catch (e) {
+		} else {
 
 			if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 				// dark mode
