@@ -2,12 +2,42 @@ function setDarkMode() {
 	document.querySelector('body').classList = 'darkmode';
 	document.getElementById('sw_light').style.display = 'block';
 	document.getElementById('sw_dark').style.display = 'none';
+	localStorage.setItem('design', 'darkmode')
 }
 
 function setLightMode() {
 	document.querySelector('body').classList = 'lightmode';
 	document.getElementById('sw_light').style.display = 'none';
 	document.getElementById('sw_dark').style.display = 'block';
+	localStorage.setItem('design', 'lightmode')
+}
+
+function checkDesign() {
+	document.onreadystatechange = () => {
+		try {
+			let design = localStorage.design
+			switch (design) {
+				case 'darkmode':
+					setDarkMode()
+					break
+				case 'lightmode':
+					setLightMode()
+					break
+				default:
+
+			}
+		} catch (e) {
+
+			if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				// dark mode
+				setDarkMode();
+			} else {
+				setLightMode();
+			}
+
+		}
+
+	}
 }
 
 function render() {
