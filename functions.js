@@ -154,8 +154,15 @@ function loadFromTextInput() {
 	let loadedLines = loaded.split("\n");
 	for(let i=0; i<loadedLines.length; i++) {
 		let currentLineList = loadedLines[i].split(" - ");
-		let currentCue = currentLineList[0].trim() + ":00";
-		let currentTitle = currentLineList[1].trim();
+		let songNameIndex = 1
+		let cuePointIndex = 0
+		if (currentLineList[songNameIndex].match(/^\d{2}:\d{2}$/g)) {
+			songNameIndex = 0
+			cuePointIndex = 1
+		}
+		let currentCue = currentLineList[cuePointIndex].trim() + ":00";
+		let currentTitle = currentLineList[songNameIndex].trim();
+
 		myAlbum.addTrack(currentTitle, currentCue);
 		render();
 	}
